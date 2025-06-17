@@ -1,9 +1,0 @@
-services:
-  - type: worker
-    name: telegram-bot
-    runtime: python
-    buildCommand: ""
-    startCommand: python bot.py
-    envVars:
-      - key: BOT_TOKEN
-        value: your-real-bot-token-here
