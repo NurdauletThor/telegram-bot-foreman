@@ -1,3 +1,4 @@
+import os
 import logging
 import pandas as pd
 from datetime import datetime, time
@@ -88,7 +89,7 @@ async def echo_id(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(f"Ваш chat_id: {update.effective_chat.id}")
 
 if __name__ == '__main__':
-    application = ApplicationBuilder().token("7531600122:AAEXTeFsMXb8pkjbGLfj5YNghgRgD5VHGkI").build()
+    application = ApplicationBuilder().token(os.getenv("BOT_TOKEN")).build()
 
     conv_handler = ConversationHandler(
         entry_points=[CommandHandler('start', start)],
